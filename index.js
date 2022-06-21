@@ -4,7 +4,6 @@ const cors = require('cors')
 const { createCanvas, loadImage } = require('canvas')
 const app = express();
 app.use(cors());
-//Here we are configuring express to use body-parser as middle-ware.
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json({ limit: '50mb' }));
 
@@ -15,10 +14,8 @@ app.post('/drawCanvas', (request,response) => {
   let targetResolution = request.body.targetResolution; 
   let canvasAsUrl = request.body.canvasAsUrl; 
   let sourceDataExtent = request.body.sourceDataExtent; 
-  let opt_interpolate  = request.body.opt_interpolate; 
   let sourceResolution = request.body.sourceResolution; 
   let stitchCanvasAsUrl = request.body.stitchCanvasAsUrl; 
-  let opt_renderEdges = request.body.opt_renderEdges;
   let canvasSize = request.body.canvasSize;
   let stitchCanvasSize = request.body.stitchCanvasSize;
   
